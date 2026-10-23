@@ -87,7 +87,8 @@ sequenceDiagram
 
   browser->>server: POST [https://studies.cs.helsinki.fi/exampleapp/new_note_spa](https://studies.cs.helsinki.fi/exampleapp/new_note_spa) (JSON payload)
   activate server
-  Note left of server: Server appends note object to in-memory array
+  Note left of server: Server appends note object to in-memory arrayls
+  
   server-->>browser: HTTP 201 Created
   deactivate server
 ```
