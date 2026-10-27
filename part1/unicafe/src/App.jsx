@@ -7,27 +7,30 @@ const App = () => {
   const [bad, setBad] = useState(0)
 
   const all = good+neutral+bad;
-
-  //event handlers
-  const handleClick = () => {
-
-  }
   
   const Button = ({onClick, text}) => <button onClick={onClick}>{text}</button>
 
-  const StatisticLine = ({text, value}) => <p>{text} {value}</p>
+  const StatisticLine = ({text, value}) => {
+    return (
+      <tr>
+        <td>{text}</td>
+        <td>{value}</td>
+      </tr>
+    )
+  }
 
   const Statistics = ({good, neutral, bad, all}) => {
     return (
-      <>
-        <StatisticLine text="good" value={good} />
-        <StatisticLine text="neutral" value={neutral} />
-        <StatisticLine text="bad" value={bad} />
-        <StatisticLine text="all" value={all} />
-        <StatisticLine text="average" value={((good*1)+(neutral*0)+(bad*-1))/(all||1)} />
-        <StatisticLine text="positive" value={`${(good*100)/(all||1)}%`} />
-        
-      </>
+      <table>
+        <tbody>
+          <StatisticLine text="good" value={good} />
+          <StatisticLine text="neutral" value={neutral} />
+          <StatisticLine text="bad" value={bad} />
+          <StatisticLine text="all" value={all} />
+          <StatisticLine text="average" value={((good*1)+(neutral*0)+(bad*-1))/(all||1)} />
+          <StatisticLine text="positive" value={`${(good*100)/(all||1)}%`} />
+        </tbody>
+      </table>
     )
   }
   
