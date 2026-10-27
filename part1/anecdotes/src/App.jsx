@@ -13,10 +13,11 @@ const App = () => {
   ]
    
   const [selected, setSelected] = useState(0)
-
+  
   return (
     <div>
       {anecdotes[selected]}
+      <div><button  onClick={() => setSelected(Math.round(Math.random() * 7))}>Display Random Anecdote</button></div>
     </div>
   )
 }
